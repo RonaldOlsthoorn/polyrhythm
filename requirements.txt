@@ -1,0 +1,3 @@
+Mido == 1.2.10
+protobuf == 3.17.3
+PyQt5
