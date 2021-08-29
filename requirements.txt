@@ -1,3 +1,4 @@
 Mido == 1.2.10
+python-rtmidi == 1.4.9
 protobuf == 3.17.3
 PyQt5

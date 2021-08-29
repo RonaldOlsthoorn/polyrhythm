@@ -139,3 +139,6 @@ cython_debug/
 
 
 !*/app/ui/base/__init__.py
+
+# QtCreator dumps
+*.ui.autosave
