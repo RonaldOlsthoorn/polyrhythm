@@ -1,4 +1,5 @@
 Mido == 1.2.10
+numpy == 1.21.2
 python-rtmidi == 1.4.9
-protobuf == 3.17.3
 PyQt5
+protobuf == 3.17.3

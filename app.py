@@ -1,12 +1,20 @@
 from app.ui.mainwindow import MainWindow
-import app.model.polyrhythm.polyrhythm_pb2 as polyrhythm_pb2
 import argparse
-from google.protobuf.message import DecodeError
 import logging
 from PyQt5.QtWidgets import QApplication
+import sys
 
 
 def main(file):
+
+    sys._excepthook = sys.excepthook
+
+    def exception_hook(exctype, value, traceback):
+        print(exctype, value, traceback)
+        sys._excepthook(exctype, value, traceback)
+        sys.exit(1)
+
+    sys.excepthook = exception_hook
 
     app = QApplication([])
     window = MainWindow(file)

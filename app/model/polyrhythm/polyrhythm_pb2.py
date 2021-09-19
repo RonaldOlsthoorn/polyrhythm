@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1bpolyrhythm/polyrhythm.proto\x12\npolyrhythm\"&\n\x08\x46raction\x12\x0b\n\x03num\x18\x01 \x01(\x05\x12\r\n\x05\x64\x65nom\x18\x02 \x01(\x05\"_\n\x08Position\x12\r\n\x05value\x18\x01 \x01(\x02\x12\x31\n\x0erepresentation\x18\x02 \x01(\x0b\x32\x14.polyrhythm.FractionH\x00\x88\x01\x01\x42\x11\n\x0f_representation\">\n\x05\x43olor\x12\t\n\x01r\x18\x01 \x01(\x05\x12\t\n\x01g\x18\x02 \x01(\x05\x12\t\n\x01\x62\x18\x03 \x01(\x05\x12\x0e\n\x01\x61\x18\x04 \x01(\x05H\x00\x88\x01\x01\x42\x04\n\x02_a\">\n\x04Note\x12&\n\x08position\x18\x01 \x01(\x0b\x32\x14.polyrhythm.Position\x12\x0e\n\x06volume\x18\x02 \x01(\x02\"n\n\x06Rhythm\x12\x12\n\nsound_path\x18\x01 \x01(\t\x12\x1f\n\x05notes\x18\x02 \x01(\x0b\x32\x10.polyrhythm.Note\x12%\n\x05\x63olor\x18\x03 \x01(\x0b\x32\x11.polyrhythm.ColorH\x00\x88\x01\x01\x42\x08\n\x06_color\"h\n\nPolyRhythm\x12,\n\x0etime_signature\x18\x01 \x01(\x0b\x32\x14.polyrhythm.Fraction\x12\x0b\n\x03\x62pm\x18\x02 \x01(\x05\x12\x1f\n\x05notes\x18\x03 \x01(\x0b\x32\x10.polyrhythm.Noteb\x06proto3'
+  serialized_pb=b'\n\x1bpolyrhythm/polyrhythm.proto\x12\npolyrhythm\"&\n\x08\x46raction\x12\x0b\n\x03num\x18\x01 \x01(\x05\x12\r\n\x05\x64\x65nom\x18\x02 \x01(\x05\"V\n\x08Position\x12\x12\n\x05value\x18\x01 \x01(\x02H\x00\x88\x01\x01\x12,\n\x0erepresentation\x18\x02 \x01(\x0b\x32\x14.polyrhythm.FractionB\x08\n\x06_value\">\n\x05\x43olor\x12\t\n\x01r\x18\x01 \x01(\x05\x12\t\n\x01g\x18\x02 \x01(\x05\x12\t\n\x01\x62\x18\x03 \x01(\x05\x12\x0e\n\x01\x61\x18\x04 \x01(\x05H\x00\x88\x01\x01\x42\x04\n\x02_a\">\n\x04Note\x12&\n\x08position\x18\x01 \x01(\x0b\x32\x14.polyrhythm.Position\x12\x0e\n\x06volume\x18\x02 \x01(\x02\"|\n\x06Rhythm\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\nsound_path\x18\x02 \x01(\t\x12\x1f\n\x05notes\x18\x03 \x03(\x0b\x32\x10.polyrhythm.Note\x12%\n\x05\x63olor\x18\x04 \x01(\x0b\x32\x11.polyrhythm.ColorH\x00\x88\x01\x01\x42\x08\n\x06_color\"z\n\nPolyRhythm\x12\x0c\n\x04name\x18\x01 \x01(\t\x12,\n\x0etime_signature\x18\x02 \x01(\x0b\x32\x14.polyrhythm.Fraction\x12\x0b\n\x03\x62pm\x18\x03 \x01(\x05\x12#\n\x07rhythms\x18\x04 \x03(\x0b\x32\x12.polyrhythm.Rhythmb\x06proto3'
 )
 
 
@@ -98,13 +98,13 @@ _POSITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='_representation', full_name='polyrhythm.Position._representation',
+      name='_value', full_name='polyrhythm.Position._value',
       index=0, containing_type=None,
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
   serialized_start=83,
-  serialized_end=178,
+  serialized_end=169,
 )
 
 
@@ -161,8 +161,8 @@ _COLOR = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=180,
-  serialized_end=242,
+  serialized_start=171,
+  serialized_end=233,
 )
 
 
@@ -200,8 +200,8 @@ _NOTE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=244,
-  serialized_end=306,
+  serialized_start=235,
+  serialized_end=297,
 )
 
 
@@ -214,22 +214,29 @@ _RHYTHM = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='sound_path', full_name='polyrhythm.Rhythm.sound_path', index=0,
+      name='name', full_name='polyrhythm.Rhythm.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='notes', full_name='polyrhythm.Rhythm.notes', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      name='sound_path', full_name='polyrhythm.Rhythm.sound_path', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='color', full_name='polyrhythm.Rhythm.color', index=2,
-      number=3, type=11, cpp_type=10, label=1,
+      name='notes', full_name='polyrhythm.Rhythm.notes', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='color', full_name='polyrhythm.Rhythm.color', index=3,
+      number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -251,8 +258,8 @@ _RHYTHM = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=308,
-  serialized_end=418,
+  serialized_start=299,
+  serialized_end=423,
 )
 
 
@@ -265,23 +272,30 @@ _POLYRHYTHM = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='time_signature', full_name='polyrhythm.PolyRhythm.time_signature', index=0,
-      number=1, type=11, cpp_type=10, label=1,
+      name='name', full_name='polyrhythm.PolyRhythm.name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='time_signature', full_name='polyrhythm.PolyRhythm.time_signature', index=1,
+      number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='bpm', full_name='polyrhythm.PolyRhythm.bpm', index=1,
-      number=2, type=5, cpp_type=1, label=1,
+      name='bpm', full_name='polyrhythm.PolyRhythm.bpm', index=2,
+      number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='notes', full_name='polyrhythm.PolyRhythm.notes', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      name='rhythms', full_name='polyrhythm.PolyRhythm.rhythms', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -297,14 +311,14 @@ _POLYRHYTHM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=420,
-  serialized_end=524,
+  serialized_start=425,
+  serialized_end=547,
 )
 
 _POSITION.fields_by_name['representation'].message_type = _FRACTION
-_POSITION.oneofs_by_name['_representation'].fields.append(
-  _POSITION.fields_by_name['representation'])
-_POSITION.fields_by_name['representation'].containing_oneof = _POSITION.oneofs_by_name['_representation']
+_POSITION.oneofs_by_name['_value'].fields.append(
+  _POSITION.fields_by_name['value'])
+_POSITION.fields_by_name['value'].containing_oneof = _POSITION.oneofs_by_name['_value']
 _COLOR.oneofs_by_name['_a'].fields.append(
   _COLOR.fields_by_name['a'])
 _COLOR.fields_by_name['a'].containing_oneof = _COLOR.oneofs_by_name['_a']
@@ -315,7 +329,7 @@ _RHYTHM.oneofs_by_name['_color'].fields.append(
   _RHYTHM.fields_by_name['color'])
 _RHYTHM.fields_by_name['color'].containing_oneof = _RHYTHM.oneofs_by_name['_color']
 _POLYRHYTHM.fields_by_name['time_signature'].message_type = _FRACTION
-_POLYRHYTHM.fields_by_name['notes'].message_type = _NOTE
+_POLYRHYTHM.fields_by_name['rhythms'].message_type = _RHYTHM
 DESCRIPTOR.message_types_by_name['Fraction'] = _FRACTION
 DESCRIPTOR.message_types_by_name['Position'] = _POSITION
 DESCRIPTOR.message_types_by_name['Color'] = _COLOR

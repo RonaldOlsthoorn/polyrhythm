@@ -2,17 +2,17 @@ syntax = "proto3";
 
 package polyrhythm;
 
-message Fraction{
+message Fraction {
     int32 num = 1;
     int32 denom = 2;
 }
 
-message Position{
-    float value = 1;
-    optional Fraction representation = 2; 
+message Position {
+    optional float value = 1;
+    Fraction representation = 2; 
 }
 
-message Color{
+message Color {
     int32 r = 1;
     int32 g = 2;
     int32 b = 3;
@@ -24,14 +24,16 @@ message Note {
     float volume = 2;
 }
 
-message Rhythm{
-    string sound_path = 1;
-    Note notes = 2;
-    optional Color color = 3;
+message Rhythm {
+    string name = 1;
+    string sound_path = 2;
+    repeated Note notes = 3;
+    optional Color color = 4;
 }
 
-message PolyRhythm{
-    Fraction time_signature = 1;
-    int32 bpm = 2;
-    Note notes = 3;
+message PolyRhythm {
+    string name = 1;
+    Fraction time_signature = 2;
+    int32 bpm = 3;
+    repeated Rhythm rhythms = 4;
 }
